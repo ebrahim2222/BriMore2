@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/category_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <RelativeLayout
+                android:layout_below="@id/category_toolbar"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="58dp">
+
+                <TextView
+                    android:id="@+id/categories_text_all"
+                    android:layout_width="196dp"
+                    android:layout_height="40dp"
+                    android:text="All Categories"
+                    android:textSize="20dp"
+                    android:textColor="@color/app_text_color"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="50dp" />
+
+
+                <RelativeLayout
+                    android:layout_width="236.5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/categories_text_all"
+                    android:layout_marginTop="24dp"
+                    android:layout_centerHorizontal="true">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/category_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+
+                        android:background="@drawable/corners_all_side" />
+
+                    <ProgressBar
+                        android:id="@+id/category_progres_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:progressDrawable="@drawable/custom_progress_bar"
+                        android:layout_centerInParent="true" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

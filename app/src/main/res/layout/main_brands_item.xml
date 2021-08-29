@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="brandsModel"
+            type="com.example.brimore2.domain.models.main.brands.BrandsDetails" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="325dp"
+        android:layout_height="150dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/corners_all_side">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                setImage="@{brandsModel.logo}" />
+
+            <RelativeLayout
+                android:layout_width="121dp"
+                android:layout_height="37.49dp"
+                android:layout_marginLeft="37.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25.5dp"
+                android:background="@drawable/corners_all_side">
+
+                <TextView
+                    android:id="@+id/main_brand_see_all"
+                    android:layout_width="60dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:text="SEE MORE"
+                    android:textSize="12dp" />
+
+              />
+                <RelativeLayout
+                    android:layout_width="28.8dp"
+                    android:layout_height="29.62dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/rectangle_35">
+                    <ImageView
+                        android:layout_width="6.58dp"
+                        android:layout_height="11.52dp"
+                        android:src="@drawable/path_11"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.brimore2.ui.Splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.brimore2.ui.onboarding.ViewPagerFragment"
+        android:label="ViewPagerFragment"
+        tools:layout="@layout/fragment_view_pager">
+        <action
+            android:id="@+id/action_viewPagerFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.brimore2.ui.Main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_categories"
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.brimore2.ui.categories.CategoriesFragment"
+        android:label="Categories" >
+
+        <action
+            android:id="@+id/action_categoriesFragment_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment" />
+
+        <argument android:name="mainCategory" app:argType="com.example.brimore2.domain.models.main.maincategory.MainCategoryDetails"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/subCategoryFragment"
+        android:name="com.example.brimore2.ui.subcategory.SubCategoryFragment"
+        android:label="SubCategory"
+        tools:layout="@layout/fragment_sub_category">
+        <action
+            android:id="@+id/action_subCategoryFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+        <argument android:name="subCatId" app:argType="com.example.brimore2.domain.models.main.maincategory.MainCategoryDetails"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.example.brimore2.ui.products.ProductsFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_productsFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <argument android:name="productDetail" app:argType="com.example.brimore2.domain.models.main.dynamicsectionone.DynamicSectionVariant"/>
+        <action
+            android:id="@+id/action_productsFragment_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment"
+            app:popUpTo="@id/subCategoryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.brimore2.ui.product_details.ProductDetailsFragment"
+        android:label="ProductDetailsFragment"
+        tools:layout="@layout/fragment_product_details">
+
+        <action
+            android:id="@+id/action_productDetailsFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_profile"
+        android:id="@+id/profileFragment"
+        android:name="com.example.brimore2.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

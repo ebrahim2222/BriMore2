@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.brimore2.domain.models.main.dynamicsectionone.DynamicSectionVariant" />
+    </data>
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F6F8">
+        <RelativeLayout
+            android:id="@+id/product_details_top"
+            android:background="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="375dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_marginTop="33dp"
+                android:background="@color/white"
+                android:id="@+id/product_details_toolbar"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="335.5dp"
+                    android:layout_height="44dp">
+                    <ImageView
+                        android:id="@+id/product_details_back"
+                        android:layout_width="20.6dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/back"/>
+
+                    <RelativeLayout
+                        android:layout_width="142dp"
+                        android:layout_height="43dp"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/product_details_name"
+                            android:layout_width="142dp"
+                            android:layout_height="20dp"
+                            android:text="@{model.name}"
+                            android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@color/app_text_color"
+                            android:gravity="center"/>
+                        <TextView
+                            android:id="@+id/product_detail_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/product_details_name"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:textSize="15dp"
+                            android:textColor="@color/app_text_color"
+                            android:textStyle="bold"
+                            />
+
+
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="20.6dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/cart"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <RelativeLayout
+                android:id="@+id/product_details_image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_details_toolbar"
+                >
+                <ImageView
+                    android:id="@+id/product_detail_image"
+                    android:layout_width="219.75dp"
+                    android:layout_height="202dp"
+                    app:srcCompat="@drawable/shoes"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="45dp"
+                    android:background="@android:color/transparent"
+                    setImage="@{model.image}"/>
+
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/details_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/product_details_image_layout"
+                android:background="@drawable/apparel_category_bg"/>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_weight="0"
+                android:layout_width="165dp"
+                android:layout_height="46dp"
+                android:text="Logout"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/corners_all_side"
+                android:drawableRight="@drawable/details_share"
+                android:paddingRight="5dp"
+         />
+
+            <Button
+                android:layout_weight="0"
+                android:id="@+id/details_add_to_cart"
+                android:layout_width="165dp"
+                android:layout_height="46dp"
+                android:text="ADD TO CART"
+                android:background="@drawable/login_btn_bg"
+                android:drawableRight="@drawable/login_img"
+                android:paddingRight="5dp"
+                android:layout_marginBottom="15dp"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

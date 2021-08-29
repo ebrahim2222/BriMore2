@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="categoryModel"
+            type="com.example.brimore2.domain.models.main.maincategory.MainCategoryDetails" />
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/category_btn"
+            android:layout_width="236.5dp"
+            android:layout_height="44dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/right_side_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:text="@{categoryModel.name}"
+                android:textColor="@color/app_text_color"
+                android:textSize="15dp"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                app:srcCompat="@drawable/group_36"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.brimore2.domain.models.main.maincategory.MainCategoryDetails" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="11dp">
+
+        <RelativeLayout
+            android:layout_width="101dp"
+            android:background="@drawable/subcategory_item_bg"
+            android:layout_height="135dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/fragment_sub_item_img"
+                android:layout_width="73dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="12dp"
+                android:layout_centerHorizontal="true"
+                setImage="@{model.image}"
+
+                />
+
+            <TextView
+                android:id="@+id/fragment_sub_item_name"
+                android:layout_below="@id/fragment_sub_item_img"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@{model.name}"
+                android:textColor="@color/app_text_color"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp" />
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
